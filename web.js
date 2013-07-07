@@ -2,15 +2,11 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-fs.appendFile('index.html', 'Hello World From FS Index.html', function (err) {
-  if (err) throw err;
-  console.log('The "data to append" was appended to file!');
-});
-
-
-
 app.get('/', function(request, response) {
-  response.send('Hello World2!');
+var fs = require("fs");
+var buffer = new buffer();
+  
+response.send(buffer.tostring("utf-8", fs.readFileSync(index.html")));
 });
 
 var port = process.env.PORT || 5000;
